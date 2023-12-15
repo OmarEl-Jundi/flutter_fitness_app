@@ -51,45 +51,48 @@ class _WorkoutState extends State<Workout> {
             image: AssetImage('images/workout.jpg'),
             fit: BoxFit.cover,
           ),
-          Column(
-            children: [
-              Expanded(
-                child: ListView.builder(
-                  itemCount: exercises.length,
-                  itemBuilder: (context, index) {
-                    return Card(
-                      child: ListTile(
-                        title: Text(exercises[index]),
-                        trailing: Checkbox(
-                          value: checkedExercises[index],
-                          onChanged: (bool? value) {
-                            setState(() {
-                              checkedExercises[index] = value ?? false;
-                            });
-                          },
+          Padding(
+            padding: EdgeInsets.all(16.0), // Add your desired padding here
+            child: Column(
+              children: [
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: exercises.length,
+                    itemBuilder: (context, index) {
+                      return Card(
+                        child: ListTile(
+                          title: Text(exercises[index]),
+                          trailing: Checkbox(
+                            value: checkedExercises[index],
+                            onChanged: (bool? value) {
+                              setState(() {
+                                checkedExercises[index] = value ?? false;
+                              });
+                            },
+                          ),
                         ),
+                      );
+                    },
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    int totalCheckedExercises =
+                        checkedExercises.where((element) => element).length;
+                    setState(() {
+                      caloriesBurned += totalCheckedExercises * 100;
+                    });
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Dashboard(),
                       ),
                     );
                   },
+                  child: Text('Done Working Out'),
                 ),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  int totalCheckedExercises =
-                      checkedExercises.where((element) => element).length;
-                  setState(() {
-                    caloriesBurned += totalCheckedExercises * 100;
-                  });
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Dashboard(),
-                    ),
-                  );
-                },
-                child: Text('Done Working Out'),
-              ),
-            ],
+              ],
+            ),
           ),
         ]));
   }

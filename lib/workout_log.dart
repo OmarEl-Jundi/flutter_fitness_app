@@ -40,7 +40,12 @@ class _WorkoutLogState extends State<WorkoutLog> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('Select Workout Type:'),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text('Select Workout Type:',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                ),
                 DropdownButton<String>(
                   value: _selectedWorkoutType,
                   icon: const Icon(Icons.arrow_downward),
@@ -68,7 +73,7 @@ class _WorkoutLogState extends State<WorkoutLog> {
                         ),
                       )
                       .toList(),
-                  dropdownColor: Colors.redAccent, // Color when dropped
+                  dropdownColor: Colors.redAccent,
                   iconEnabledColor: Colors.redAccent,
                 ),
                 ElevatedButton(
