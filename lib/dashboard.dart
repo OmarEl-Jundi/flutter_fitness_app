@@ -27,7 +27,7 @@ class _DashboardState extends State<Dashboard> {
         title: const Text('Dashboard'),
         centerTitle: true,
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: const Color.fromARGB(255, 255, 136, 0),
       ),
       body: Stack(
         fit: StackFit.expand,
@@ -49,7 +49,7 @@ class _DashboardState extends State<Dashboard> {
                     padding: const EdgeInsets.all(15),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.blueAccent,
+                      color: Color.fromARGB(255, 255, 136, 0),
                     ),
                     child: const Text(
                       'Steps Taken: 10,000 Steps',
@@ -61,7 +61,7 @@ class _DashboardState extends State<Dashboard> {
                     width: screenWidth * 0.4,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.blueAccent,
+                      color: Color.fromARGB(255, 255, 136, 0),
                     ),
                     padding: const EdgeInsets.all(15),
                     child: Text(
@@ -80,7 +80,7 @@ class _DashboardState extends State<Dashboard> {
                     padding: const EdgeInsets.all(15),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.blueAccent,
+                      color: Color.fromARGB(255, 255, 136, 0),
                     ),
                     child: Text(
                       'Calories Intake: \n$caloriesIntake Kcal',
@@ -92,7 +92,7 @@ class _DashboardState extends State<Dashboard> {
                     width: screenWidth * 0.4,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.blueAccent,
+                      color: Color.fromARGB(255, 255, 136, 0),
                     ),
                     padding: const EdgeInsets.all(15),
                     child: Text(
@@ -108,7 +108,7 @@ class _DashboardState extends State<Dashboard> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.shifting,
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Color.fromARGB(255, 255, 136, 0),
         currentIndex: _currentIndex,
         onTap: (int index) {
           setState(() {
@@ -133,7 +133,7 @@ class _DashboardState extends State<Dashboard> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Dashboard',
-            backgroundColor: Colors.blueAccent,
+            backgroundColor: Color.fromARGB(255, 255, 136, 0),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.fitness_center),

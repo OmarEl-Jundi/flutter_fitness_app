@@ -73,7 +73,7 @@ class _WorkoutLogState extends State<WorkoutLog> {
                         ),
                       )
                       .toList(),
-                  dropdownColor: Colors.redAccent,
+                  dropdownColor: Colors.blueAccent,
                   iconEnabledColor: Colors.redAccent,
                 ),
                 ElevatedButton(
